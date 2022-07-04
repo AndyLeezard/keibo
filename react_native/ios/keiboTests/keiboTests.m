@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface keiboTests : XCTestCase
+@interface KeiboTests : XCTestCase
 
 @end
 
-@implementation keiboTests
+@implementation KeiboTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
