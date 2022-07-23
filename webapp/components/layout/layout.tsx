@@ -9,20 +9,42 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
       {/* <Navbar links={data.links} /> */}
       <Head>
         <title>Keibo - Investment Tracker</title>
-        <meta name="description" content="Customized real-time simulation & tracking solution for your crypto / NFT / stock / funds investment and trading portfolio." />
+        <meta
+          name="description"
+          content="Customized real-time simulation & tracking solution for your crypto / NFT / stock / funds investment and trading portfolio."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>{children}</main>
       {/* <Footer /> */}
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://github.com/AndyLeezard"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ flexDirection: "column" }}
         >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          <span>
+            © 2022 Andy Lee
+            <span className={styles.logo}>
+              <Image
+                src="/lizard888.svg"
+                alt="Vercel Logo"
+                width={16}
+                height={16}
+              />
+            </span>
+          </span>
+          <span>
+            All Rights Reserved
+            <span className={styles.logo}>
+              <Image
+                src="/letter_64.png"
+                alt="Vercel Logo"
+                width={16}
+                height={16}
+              />
+            </span>
           </span>
         </a>
       </footer>
