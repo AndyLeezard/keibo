@@ -2,11 +2,18 @@
   display: flex;
   flex: 1;
   padding: 1rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
   font-weight: 300;
   font-size: 1.25rem;
+}
+
+[data-theme='dark'] .footer {
+  border-top: 1px solid #eaeaea;
+}
+
+[data-theme='light'] .footer {
+  border-top: 1px solid #656565;
 }
 
 .footer a {

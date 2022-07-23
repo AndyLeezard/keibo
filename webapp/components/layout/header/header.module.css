@@ -1,0 +1,13 @@
+#wrapper {
+  position: relative;
+  left: 0;
+  right: 0;
+  height: 50;
+  /* background-color: #3f54d1; */
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
