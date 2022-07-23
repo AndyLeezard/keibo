@@ -6,7 +6,19 @@
 }
 
 [data-theme='light'] .btn {
-  background-color: #d2d2d2;
+  background-color: rgba(210, 210, 210, 0.8);
+}
+
+[data-theme='light'] .btn:hover {
+  background-color: rgba(210, 210, 210, 1);
+}
+
+[data-theme='dark'] .btn {
+  background-color: rgba(107, 107, 107, 0.8);
+}
+
+[data-theme='dark'] .btn:hover {
+  background-color: rgba(107, 107, 107, 1);
 }
 
 .theme_btn_svg {
