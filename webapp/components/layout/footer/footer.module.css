@@ -29,6 +29,11 @@
   margin-bottom: 4px;
 }
 
+.version {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .icon {
   margin-left: 0.5rem;
 }

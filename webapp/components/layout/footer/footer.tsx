@@ -34,6 +34,10 @@ const Footer = (props: Props) => {
             />
           </span>
         </span>
+        <span className={styles.version}>
+          0.0.1
+          {/* process.env.NEXT_PUBLIC_VERSION */}
+        </span>
       </a>
     </footer>
   )

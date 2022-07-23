@@ -5,11 +5,11 @@ import { ThemeButton } from "./widgets"
 
 type Props = {}
 
-const Header = (props: Props) => {
+const Navbar = (props: Props) => {
   const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
-    if (!theme) {
+    if (!theme || theme === "system") {
       setTheme(
         Boolean(
           window.matchMedia &&
@@ -35,4 +35,4 @@ const Header = (props: Props) => {
   )
 }
 
-export default Header
+export default Navbar
