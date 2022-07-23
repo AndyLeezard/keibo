@@ -2,10 +2,15 @@ import React from "react"
 import styles from "./header.module.css"
 import { useTheme } from "next-themes"
 import { ThemeButton } from "./widgets"
+import { Session } from "next-auth"
 
-type Props = {}
+type NavbarProps = {
+  signIn: () => void
+  signOut: () => void
+  session: Session | null
+}
 
-const Navbar = (props: Props) => {
+const Navbar = ({ signIn, signOut, session }: NavbarProps) => {
   const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
@@ -30,6 +35,17 @@ const Navbar = (props: Props) => {
       {/* core section */}
       <div style={{ flex: 1, textAlign: "center" }}>Center</div>
       {/* right header */}
+      <div
+        onMouseDown={() => {
+          session?.user ? signOut() : signIn()
+        }}
+        style={{ cursor: "pointer" }}
+      >
+        {session?.user?.email
+          ? `Signed in as ${session.user.email}`
+          : `Sign in`}
+      </div>
+      <div style={{ width: 10 }} />
       <ThemeButton width={36} height={36} clickCallback={toggleTheme} />
     </div>
   )

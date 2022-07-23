@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
+    GOOGLE_ID: process.env.GOOGLE_ID,
+    GOOGLE_SECRET: process.env.GOOGLE_SECRET,
+
     FIREBASE_APIKEY: process.env.FIREBASE_APIKEY,
     FIREBASE_AUTHDOMAIN: process.env.FIREBASE_AUTHDOMAIN,
     FIREBASE_PROJECTID: process.env.FIREBASE_PROJECTID,
