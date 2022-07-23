@@ -8,6 +8,21 @@ type Props = {}
 const Header = (props: Props) => {
   const { theme, setTheme } = useTheme()
 
+  const toggleTheme = () => {
+    if (!theme) {
+      setTheme(
+        Boolean(
+          window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+        )
+          ? "light"
+          : "dark"
+      )
+      return
+    }
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
+
   return (
     <div id={styles.wrapper}>
       {/* left header */}
@@ -15,11 +30,7 @@ const Header = (props: Props) => {
       {/* core section */}
       <div style={{ flex: 1, textAlign: "center" }}>Center</div>
       {/* right header */}
-      <ThemeButton
-        width={36}
-        height={36}
-        clickCallback={() => setTheme(theme === "dark" ? "light" : "dark")}
-      />
+      <ThemeButton width={36} height={36} clickCallback={toggleTheme} />
     </div>
   )
 }
