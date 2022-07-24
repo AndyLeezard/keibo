@@ -2,15 +2,12 @@ import React from "react"
 import styles from "./header.module.css"
 import { useTheme } from "next-themes"
 import { ThemeButton } from "./widgets"
-import { Session } from "next-auth"
+import { useSession, signIn, signOut } from "next-auth/react"
 
-type NavbarProps = {
-  signIn: () => void
-  signOut: () => void
-  session: Session | null
-}
+type NavbarProps = {}
 
-const Navbar = ({ signIn, signOut, session }: NavbarProps) => {
+const Navbar = (props: NavbarProps) => {
+  const { data: session } = useSession()
   const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {

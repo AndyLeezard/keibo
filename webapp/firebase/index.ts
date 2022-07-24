@@ -1,1 +1,0 @@
-export { firestore, firebase_auth } from "./firebase"
