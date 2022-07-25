@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styles from "./header.module.css"
 import { useTheme } from "next-themes"
 import { useSession, signIn, signOut } from "next-auth/react"
-import NavbarButton from "./widgets/NavbarButton"
+import NavbarButton from "./widgets/navbarButton"
 import { ButtonID } from "./widgets/types"
 
 type NavbarProps = {}
