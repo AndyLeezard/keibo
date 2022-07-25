@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./header.module.css"
 import { useTheme } from "next-themes"
-import { ThemeButton } from "./widgets"
 import { useSession, signIn, signOut } from "next-auth/react"
+import NavbarButton from "./widgets/NavbarButton"
+import { ButtonID } from "./widgets/types"
 
 type NavbarProps = {}
 
 const Navbar = (props: NavbarProps) => {
+  const [dropDownID, setDropdownID] = useState<ButtonID | "">("")
   const { data: session } = useSession()
   const { theme, setTheme } = useTheme()
 
@@ -43,7 +45,24 @@ const Navbar = (props: NavbarProps) => {
           : `Sign in`}
       </div>
       <div style={{ width: 10 }} />
-      <ThemeButton width={36} height={36} clickCallback={toggleTheme} />
+      <NavbarButton
+        buttonID="lang"
+        displayDropdown={dropDownID === "lang"}
+        dismissCallback={() => setDropdownID("")}
+        clickCallback={() =>
+          setDropdownID((prev) => (prev === "lang" ? "" : "lang"))
+        }
+        dropdownCallback={() => {
+          setDropdownID("")
+        }}
+      />
+      <div style={{ width: 5 }} />
+      <NavbarButton
+        buttonID="theme"
+        displayDropdown={dropDownID === "theme"}
+        dismissCallback={() => setDropdownID("")}
+        clickCallback={toggleTheme}
+      />
     </div>
   )
 }

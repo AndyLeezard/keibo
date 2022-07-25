@@ -20,6 +20,10 @@ const nextConfig = {
     FIREBASE_APPID: process.env.FIREBASE_APPID,
     FIREBASE_MID: process.env.FIREBASE_MID,
   },
+  i18n: {
+    locales: ['fr-FR', 'en-US', 'ko-KR'],
+    defaultLocale: 'fr-FR',
+  },
 }
 
 module.exports = nextConfig
