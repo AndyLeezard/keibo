@@ -40,10 +40,11 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 .logo span {
-  margin-inline-start: 0.3rem;
+  margin-inline-start: 0.15rem;
   font-size: 24px;
   font-weight: 500;
 }
@@ -69,16 +70,34 @@
 .checkbox_halo {
   position: absolute;
   transition-duration: 250ms;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition-duration: 200ms;
   border-radius: 33%;
-  width: 200%;
-  height: 200%;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1, ;
+  z-index: -1;
+}
+
+.checkbox_halo_animated {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
 
 .conditions span {
-  margin-inline-start: 0.3rem;
+  margin-inline-start: 0.5rem;
+}
+
+.error_message {
+  text-align: justify;
+  line-height: 18px;
+  display: flex;
+  margin-bottom: 0.5rem;
 }
