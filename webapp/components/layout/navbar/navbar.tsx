@@ -5,9 +5,11 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import NavbarButton from "./widgets/navbarButton"
 import { ButtonID } from "./widgets/types"
 
-type NavbarProps = {}
+type NavbarProps = {
+  hideSignin?: boolean
+}
 
-const Navbar = (props: NavbarProps) => {
+const Navbar = ({ hideSignin }: NavbarProps) => {
   const [dropDownID, setDropdownID] = useState<ButtonID | "">("")
   const { data: session } = useSession()
   const { theme, setTheme } = useTheme()
@@ -34,17 +36,20 @@ const Navbar = (props: NavbarProps) => {
       {/* core section */}
       <div style={{ flex: 1, textAlign: "center" }}>Center</div>
       {/* right header */}
-      <div
-        onMouseDown={() => {
-          session?.user ? signOut() : signIn()
-        }}
-        style={{ cursor: "pointer" }}
-      >
-        {session?.user?.email
-          ? `Signed in as ${session.user.email}`
-          : `Sign in`}
-      </div>
-      <div style={{ width: 10 }} />
+      {hideSignin ? (
+        <></>
+      ) : (
+        <div
+          onMouseDown={() => {
+            session?.user ? signOut() : signIn()
+          }}
+          style={{ cursor: "pointer", marginRight: "10px" }}
+        >
+          {session?.user?.email
+            ? `Signed in as ${session.user.email}`
+            : `Sign in`}
+        </div>
+      )}
       <NavbarButton
         buttonID="lang"
         displayDropdown={dropDownID === "lang"}
