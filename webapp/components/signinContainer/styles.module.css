@@ -33,3 +33,52 @@
   justify-content: center;
   align-items: center;
 }
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.logo span {
+  margin-inline-start: 0.3rem;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.conditions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  transition-duration: 500ms;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox_halo {
+  position: absolute;
+  transition-duration: 250ms;
+  border-radius: 33%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1, ;
+}
+
+.conditions span {
+  margin-inline-start: 0.3rem;
+}
